@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSI 2020</title>
+    <link rel="stylesheet" href="./normalize.css" type="text/css">
+    <link rel="stylesheet" href="./main.css" type="text/css">
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header__logo-text">msi 2020</h1>
+        <button class="header__menu-toggle" id="toggle-menu">toggle menu</button>
+        <p class="header__favourite">Favourite</p>
+    </header>
+    <main class="main">
+        <h2 class="main__hey">Hey!</h2>
+        <h3 class="main__lets">Let's try to find a joke for you:</h3>
+
+        <div class="radio-section">
+            <label class="radio-secton__choose-block">
+                <input class="radio-section__choose" type="radio" name="light" checked>
+                <span class="radio-section__design"></span>
+                <span class="radio-section__text">Random</span>
+            </label>
+            <label class="radio-secton__choose-block">
+                <input class="radio-section__choose" type="radio" name="light">
+                <span class="radio-section__design"></span>
+                <span class="radio-section__text">From categories</span>
+            </label>
+            <label class="radio-secton__choose-block">
+                <input class="radio-section__choose" type="radio" name="light">
+                <span class="radio-section__design"></span>
+                <span class="radio-section__text">Search</span>
+            </label>
+        </div>
+        <div class="categories">
+            <button class="categories__category">animal</button>
+            <button class="categories__category">career</button>
+            <button class="categories__category categories__category_active">celebrity</button>
+            <button class="categories__category">dev</button>
+        </div>
+        <div class="search-section">
+            <input type="search" class="search-section__search" placeholder="Free text search...">
+        </div>
+
+        <button class="main__joke-button">Get a joke</button>
+
+        <div class="jokes">
+            <div class="jokes__joke">
+                <button class="jokes__button-like">
+                    <svg class="jokes__heart-icon" width="20" height="17" viewBox="0 0 20 17" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M18.4134 1.66367C17.3781 0.590857 15.9575 0 14.413 0C13.2585 0 12.2012 0.348712 11.2704 1.03637C10.8008 1.38348 10.3752 1.80814 10 2.3038C9.62494 1.80829 9.19922 1.38348 8.7294 1.03637C7.79877 0.348712 6.74149 0 5.58701 0C4.04251 0 2.62177 0.590857 1.58646 1.66367C0.563507 2.72395 0 4.17244 0 5.74252C0 7.35852 0.630341 8.83778 1.98364 10.3979C3.19427 11.7935 4.93423 13.2102 6.94916 14.8507C7.63718 15.411 8.41705 16.046 9.22684 16.7224C9.44077 16.9015 9.71527 17 10 17C10.2846 17 10.5592 16.9015 10.7729 16.7227C11.5826 16.0461 12.363 15.4108 13.0513 14.8503C15.0659 13.2101 16.8059 11.7935 18.0165 10.3978C19.3698 8.83778 20 7.35852 20 5.74238C20 4.17244 19.4365 2.72395 18.4134 1.66367Z"
+                            fill="#FF6767" />
+                    </svg>
+                </button>
+
+                <div class="jokes__joke-description">
+                    <div class="jokes__message-icon-circle">
+                        <svg class="jokes__message-icon" width="20" height="19" viewBox="0 0 20 19" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M17.2504 0H2.74963C1.23352 0 0 1.23328 0 2.74963V11.6238C0 13.1367 1.22815 14.368 2.73987 14.3734V18.4004L8.5271 14.3734H17.2504C18.7665 14.3734 20 13.1399 20 11.6238V2.74963C20 1.23328 18.7665 0 17.2504 0ZM18.8281 11.6238C18.8281 12.4937 18.1204 13.2015 17.2504 13.2015H8.15942L3.91174 16.1573V13.2015H2.74963C1.87964 13.2015 1.17188 12.4937 1.17188 11.6238V2.74963C1.17188 1.87952 1.87964 1.17188 2.74963 1.17188H17.2504C18.1204 1.17188 18.8281 1.87952 18.8281 2.74963V11.6238Z"
+                                fill="#ABABAB" />
+                        </svg>
+                    </div>
+
+                    <div class="jokes__joke-content">
+                        <a class="jokes__joke-link" href="#"><span class="id">ID: </span>XNaAxUduSw6zANDaIEab7A</a>
+                        <p class="jokes__joke-text">
+                            No one truly knows who's
+                            Chuck Norris' real father.
+                            No one is biologically strong
+                            enough for this. He must've
+                            conceived himself.
+                        </p>
+                        <p class="jokes__last-update">Last update: 1923 hours ago</p>
+                        <p class="jokes__joke-category">category</p>
+                    </div>
+                </div>
+            </div>
+            <div class="jokes__joke">
+                <button class="jokes__button-like">
+                    <svg class="jokes__heart-icon" width="20" height="17" viewBox="0 0 20 17" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M18.4134 1.66367C17.3781 0.590857 15.9575 0 14.413 0C13.2585 0 12.2012 0.348712 11.2704 1.03637C10.8008 1.38348 10.3752 1.80814 10 2.3038C9.62494 1.80829 9.19922 1.38348 8.7294 1.03637C7.79877 0.348712 6.74149 0 5.58701 0C4.04251 0 2.62177 0.590857 1.58646 1.66367C0.563507 2.72395 0 4.17244 0 5.74252C0 7.35852 0.630341 8.83778 1.98364 10.3979C3.19427 11.7935 4.93423 13.2102 6.94916 14.8507C7.63718 15.411 8.41705 16.046 9.22684 16.7224C9.44077 16.9015 9.71527 17 10 17C10.2846 17 10.5592 16.9015 10.7729 16.7227C11.5826 16.0461 12.363 15.4108 13.0513 14.8503C15.0659 13.2101 16.8059 11.7935 18.0165 10.3978C19.3698 8.83778 20 7.35852 20 5.74238C20 4.17244 19.4365 2.72395 18.4134 1.66367Z"
+                            fill="#FF6767" />
+                    </svg>
+                </button>
+
+                <div class="jokes__joke-description">
+                    <div class="jokes__message-icon-circle">
+                        <svg class="jokes__message-icon" width="20" height="19" viewBox="0 0 20 19" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M17.2504 0H2.74963C1.23352 0 0 1.23328 0 2.74963V11.6238C0 13.1367 1.22815 14.368 2.73987 14.3734V18.4004L8.5271 14.3734H17.2504C18.7665 14.3734 20 13.1399 20 11.6238V2.74963C20 1.23328 18.7665 0 17.2504 0ZM18.8281 11.6238C18.8281 12.4937 18.1204 13.2015 17.2504 13.2015H8.15942L3.91174 16.1573V13.2015H2.74963C1.87964 13.2015 1.17188 12.4937 1.17188 11.6238V2.74963C1.17188 1.87952 1.87964 1.17188 2.74963 1.17188H17.2504C18.1204 1.17188 18.8281 1.87952 18.8281 2.74963V11.6238Z"
+                                fill="#ABABAB" />
+                        </svg>
+                    </div>
+
+                    <div class="jokes__joke-content">
+                        <a class="jokes__joke-link" href="#"><span class="id">ID: </span>XNaAxUduSw6zANDaIEab7A</a>
+                        <p class="jokes__joke-text">
+                            No one truly knows who's
+                            Chuck Norris' real father.
+                            No one is biologically strong
+                            enough for this. He must've
+                            conceived himself.
+                        </p>
+                        <p class="jokes__last-update">Last update: 1923 hours ago</p>
+                        <p class="jokes__joke-category">category</p>
+                    </div>
+                </div>
+            </div>
+            <div class="jokes__joke">
+                <button class="jokes__button-like">
+                    <svg class="jokes__heart-icon" width="20" height="17" viewBox="0 0 20 17" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M18.4134 1.66367C17.3781 0.590857 15.9575 0 14.413 0C13.2585 0 12.2012 0.348712 11.2704 1.03637C10.8008 1.38348 10.3752 1.80814 10 2.3038C9.62494 1.80829 9.19922 1.38348 8.7294 1.03637C7.79877 0.348712 6.74149 0 5.58701 0C4.04251 0 2.62177 0.590857 1.58646 1.66367C0.563507 2.72395 0 4.17244 0 5.74252C0 7.35852 0.630341 8.83778 1.98364 10.3979C3.19427 11.7935 4.93423 13.2102 6.94916 14.8507C7.63718 15.411 8.41705 16.046 9.22684 16.7224C9.44077 16.9015 9.71527 17 10 17C10.2846 17 10.5592 16.9015 10.7729 16.7227C11.5826 16.0461 12.363 15.4108 13.0513 14.8503C15.0659 13.2101 16.8059 11.7935 18.0165 10.3978C19.3698 8.83778 20 7.35852 20 5.74238C20 4.17244 19.4365 2.72395 18.4134 1.66367Z"
+                            fill="#FF6767" />
+                    </svg>
+                </button>
+
+                <div class="jokes__joke-description">
+                    <div class="jokes__message-icon-circle">
+                        <svg class="jokes__message-icon" width="20" height="19" viewBox="0 0 20 19" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M17.2504 0H2.74963C1.23352 0 0 1.23328 0 2.74963V11.6238C0 13.1367 1.22815 14.368 2.73987 14.3734V18.4004L8.5271 14.3734H17.2504C18.7665 14.3734 20 13.1399 20 11.6238V2.74963C20 1.23328 18.7665 0 17.2504 0ZM18.8281 11.6238C18.8281 12.4937 18.1204 13.2015 17.2504 13.2015H8.15942L3.91174 16.1573V13.2015H2.74963C1.87964 13.2015 1.17188 12.4937 1.17188 11.6238V2.74963C1.17188 1.87952 1.87964 1.17188 2.74963 1.17188H17.2504C18.1204 1.17188 18.8281 1.87952 18.8281 2.74963V11.6238Z"
+                                fill="#ABABAB" />
+                        </svg>
+                    </div>
+
+                    <div class="jokes__joke-content">
+                        <a class="jokes__joke-link" href="#"><span class="id">ID: </span>XNaAxUduSw6zANDaIEab7A</a>
+                        <p class="jokes__joke-text">
+                            No one truly knows who's
+                            Chuck Norris' real father.
+                            No one is biologically strong
+                            enough for this. He must've
+                            conceived himself.
+                        </p>
+                        <p class="jokes__last-update">Last update: 1923 hours ago</p>
+                        <p class="jokes__joke-category">category</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
