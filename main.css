@@ -17,23 +17,12 @@ body {
     color: var(--main-color);
 }
 
-.body_aside {
-    background: var(--element-color);
-}
-
 .header {
-    z-index: 10;
-    top: 0;
     background: var(--white-color);
-    position: fixed;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     width: 100%;
-}
-
-.header_aside {
-    background: var(--element-color);
 }
 
 .header__logo-text {
@@ -45,14 +34,10 @@ body {
     margin-right: auto;
 }
 
-.header__logo-text_aside {
-    display: none;
-}
-
-.header__menu-toggle {
-    position: relative;
-    top: -0.1em;
-    right: 0.5em;
+.body__menu-toggle {
+    position: absolute;
+    top: 1em;
+    right: 6em;
     border: 0;
     font-size: 1em;
     width: 1.5em;
@@ -63,9 +48,10 @@ body {
     overflow: hidden;
 }
 
-.header__menu-toggle::after {
+.body__menu-toggle::after {
+    z-index: 30;
     position: relative;
-    top: -1em;
+    top: -1.2em;
     color: white;
     display: block;
     content: "\003D";
@@ -77,11 +63,15 @@ body {
     width: 1.2em;
 }
 
-.header__menu-toggle_aside::after {
+.body__menu-toggle_aside::after {
     content: "\0078";
 }
 
-.header__favourite {
+.body__favourite {
+    z-index: 30;
+    position: absolute;
+    top: 0;
+    right: 0;
     margin-right: 1em;
     color: var(--secondary-color);
     font-weight: 500;
@@ -91,10 +81,6 @@ body {
     margin-top: 15vh;
     margin-left: 1em;
     margin-right: 1em;
-}
-
-.main_aside {
-    display: none;
 }
 
 .main__hey {
@@ -294,13 +280,54 @@ body {
     text-transform: uppercase;
 }
 
+.body__aside-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 .aside {
-    margin-top: 15vh;
-    margin-left: 1em;
-    margin-right: 1em;
+    z-index: 20;
+    position: absolute;
+    min-height: fit-content;
+    max-height: 100vh;
+    overflow: scroll;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-top: 5em;
+    padding-left: 1em;
+    padding-right: 1em;
     display: none;
+    background: var(--element-color);
 }
 
 .aside_show {
     display: block;
+}
+
+.aside_show .jokes__joke {
+    width: 100%;
+    background: var(--white-color);
+    box-shadow: 0em 0.2em 0.3em rgba(0, 0, 0, 0.1);
+    margin-top: 1em;
+    border-radius: 1em;
+    padding: 1em;
+}
+
+.body-aside {
+    overflow: hidden;
+}
+
+body {
+    height: 100%;
+}
+
+@media (min-width: 41em) {
+    .aside {
+        left: 20em;
+    }
 }
