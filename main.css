@@ -166,6 +166,10 @@ body {
     flex-wrap: wrap;
 }
 
+.categories_hide {
+    display: none;
+}
+
 .categories__category {
     background: transparent;
     font-size: 0.6rem;
@@ -196,6 +200,10 @@ body {
     padding: 0.5em 0.75em;
 }
 
+.search-section__search_hide {
+    display: none;
+}
+
 .search-section__search::placeholder {
     color: var(--secondary-color);
 }
@@ -222,6 +230,10 @@ body {
     margin-top: 1em;
     border-radius: 1em;
     padding: 1em;
+}
+
+.jokes__joke_hide {
+    display: none;
 }
 
 .jokes__button-like {
@@ -251,6 +263,10 @@ body {
     position: relative;
 }
 
+.jokes__joke-content {
+    width: 100%;
+}
+
 .jokes__joke-link {
     color: var(--secondary-color);
     margin-top: 0;
@@ -270,6 +286,7 @@ body {
 }
 
 .jokes__joke-category {
+    float: right;
     width: fit-content;
     font-size: 0.5rem;
     border-radius: 0.3rem;
