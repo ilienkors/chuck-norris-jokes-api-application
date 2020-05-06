@@ -26,8 +26,7 @@ const clickCategory = () => {
         category.addEventListener('click', () => {
             removeAllActiveCategories();
             currentCategory = category.innerHTML;
-            category.classList.add("categories__category_active");          
-            console.log(category.innerHTML);
+            category.classList.add("categories__category_active");
         });
     })
 }
