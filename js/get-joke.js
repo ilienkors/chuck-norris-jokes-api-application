@@ -43,3 +43,5 @@ search.addEventListener('click', function (event) {
     document.getElementById('categories').classList.add("categories_hide");
     document.getElementById('search-input').classList.remove("search-section__search_hide");
 });
+
+refreshFavorite();

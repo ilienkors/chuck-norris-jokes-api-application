@@ -1,3 +1,12 @@
+const refreshFavorite = () => {
+    let aside = document.getElementById("aside");
+    while (aside.firstChild)
+        aside.removeChild(aside.firstChild)
+    Object.keys(localStorage).forEach(jokeId => {
+        createJoke("aside", JSON.parse(localStorage.getItem(jokeId)));
+    });
+};
+
 const createJoke = (place, resJoke) => {
     let jokePlace = document.getElementById(place);
 
@@ -11,8 +20,31 @@ const createJoke = (place, resJoke) => {
 
     let heartIcon = document.createElement("img");
     heartIcon.classList.add("heart-icon");
-    heartIcon.src = "./icons/like.svg";
+    heartIcon.id = place + resJoke.id;
+    if (localStorage.getItem(resJoke.id))
+        heartIcon.src = "./icons/liked.svg";
+    else
+        heartIcon.src = "./icons/unliked.svg";
     buttonLike.appendChild(heartIcon);
+
+    buttonLike.addEventListener('click', () => {
+        let url = window.location.origin + "/icons/";
+        if (heartIcon.src == url + "unliked.svg") {
+            if (document.getElementById("aside" + resJoke.id))
+                document.getElementById("aside" + resJoke.id).src = url + "liked.svg";
+            if (document.getElementById("main-jokes" + resJoke.id))
+                document.getElementById("main-jokes" + resJoke.id).src = url + "liked.svg";
+            localStorage.setItem(resJoke.id, JSON.stringify(resJoke));
+        }
+        else {
+            if (document.getElementById("aside" + resJoke.id))
+                document.getElementById("aside" + resJoke.id).src = url + "unliked.svg";
+            if (document.getElementById("main-jokes" + resJoke.id))
+                document.getElementById("main-jokes" + resJoke.id).src = url + "unliked.svg";
+            localStorage.removeItem(resJoke.id)
+        }
+        refreshFavorite();
+    });
     /* end of button */
 
     /* start of joke description */
@@ -71,4 +103,4 @@ const createCategory = (name) => {
     button.innerText = name;
 
     categories.appendChild(button);
-}
+};
