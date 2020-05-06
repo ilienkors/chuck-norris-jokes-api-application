@@ -248,19 +248,10 @@ body {
     align-items: flex-start;
 }
 
-.jokes__message-icon-circle {
+.jokes__message-icon {
     margin-right: 1rem;
-    padding: 1rem;
     width: 2rem;
     height: 2rem;
-    border-radius: 50%;
-    background: var(--white-color);
-}
-
-.jokes__message-icon {
-    top: -0.4em;
-    left: -0.48em;
-    position: relative;
 }
 
 .jokes__joke-content {
@@ -356,6 +347,7 @@ body {
         display: block;
         overflow: hidden;
         max-height: 100%;
+        min-height: 100vh;
     }
     .body {
         display: grid;
