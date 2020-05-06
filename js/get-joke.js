@@ -5,13 +5,21 @@ jokeButton.addEventListener('click', function (event) {
             .then((response) => {
                 return response.json();
             })
-            .then((data) => {
-                createJoke("main-jokes", data);
-                console.log(data);
+            .then((resJoke) => {
+                createJoke("main-jokes", resJoke);
+                console.log(resJoke);
             });
     };
     if (document.getElementById('from-categories').checked) {
-        console.log("from-categories");
+        console.log(currentCategory);
+        fetch('https://api.chucknorris.io/jokes/random?category='+currentCategory)
+            .then((response) => {
+                return response.json();
+            })
+            .then((resJoke) => {
+                createJoke("main-jokes", resJoke);
+                console.log(resJoke);
+            });
     };
     if (document.getElementById('search').checked) {
         console.log("search");
