@@ -1,3 +1,9 @@
+const clearJokes = () => {
+    let mainJokes = document.getElementById("main-jokes");
+    while (mainJokes.firstChild)
+        mainJokes.removeChild(mainJokes.firstChild)
+}
+
 const refreshFavorite = () => {
     let aside = document.getElementById("aside");
     while (aside.firstChild)
