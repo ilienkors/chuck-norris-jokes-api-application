@@ -1,5 +1,15 @@
 let currentCategory = ""
 
+const createCategory = (name) => {
+    let categories = document.getElementById("categories");
+
+    let button = document.createElement("button");
+    button.classList.add("categories__category");
+    button.innerText = name;
+
+    categories.appendChild(button);
+};
+
 const setCategories = () => {
     fetch('https://api.chucknorris.io/jokes/categories')
         .then((response) => {

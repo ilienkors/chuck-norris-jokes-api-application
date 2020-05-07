@@ -4,15 +4,6 @@ const clearJokes = () => {
         mainJokes.removeChild(mainJokes.firstChild)
 }
 
-const refreshFavorite = () => {
-    let aside = document.getElementById("aside");
-    while (aside.firstChild)
-        aside.removeChild(aside.firstChild)
-    Object.keys(localStorage).forEach(jokeId => {
-        createJoke("aside", JSON.parse(localStorage.getItem(jokeId)));
-    });
-};
-
 const createJoke = (place, resJoke) => {
     let jokePlace = document.getElementById(place);
 
@@ -99,14 +90,4 @@ const createJoke = (place, resJoke) => {
     /* end of joke block */
 
     jokePlace.appendChild(joke);
-};
-
-const createCategory = (name) => {
-    let categories = document.getElementById("categories");
-
-    let button = document.createElement("button");
-    button.classList.add("categories__category");
-    button.innerText = name;
-
-    categories.appendChild(button);
 };
