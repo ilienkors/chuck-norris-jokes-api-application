@@ -69,16 +69,16 @@ const createJoke = (place, resJoke) => {
     lastUpdate.classList.add("jokes__last-update");
     lastUpdate.innerText = "Last update: " + Math.round(((new Date).getTime() - new Date(resJoke.updated_at).getTime()) / 3600000) + " hours ago";
 
+    jokeContent.appendChild(jokeLink);
+    jokeContent.appendChild(jokeText);
+    jokeContent.appendChild(lastUpdate);
+
     if (resJoke.categories[0]) {
         let jokeCategory = document.createElement("p");
         jokeCategory.classList.add("jokes__joke-category");
         jokeCategory.innerText = resJoke.categories[0];
         jokeContent.appendChild(jokeCategory);
     }
-
-    jokeContent.appendChild(jokeLink);
-    jokeContent.appendChild(jokeText);
-    jokeContent.appendChild(lastUpdate);
     /* end of joke content */
 
     jokeDescription.appendChild(messageIcon);

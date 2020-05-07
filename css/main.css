@@ -278,9 +278,6 @@ body {
 }
 
 .jokes__joke-category {
-    position: absolute;
-    bottom: 0;
-    right: 0;
     width: fit-content;
     font-size: 0.5rem;
     border-radius: 0.3rem;
@@ -340,6 +337,11 @@ body {
 @media (min-width: 41em) {
     .aside {
         left: 20em;
+    }
+    .jokes__joke-category {
+        position: absolute;
+        bottom: 0;
+        right: 0;
     }
 }
 
