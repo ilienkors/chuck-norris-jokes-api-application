@@ -36,12 +36,12 @@ body {
 
 .body__menu-toggle {
     position: absolute;
-    top: 1em;
-    right: 6em;
+    right: 5em;
     border: 0;
+    top: 1em;
     font-size: 1em;
-    width: 1.5em;
-    height: 1.5em;
+    width: 2.5em;
+    height: 2em;
     background-color: transparent;
     text-indent: 7em;
     white-space: nowrap;
@@ -50,8 +50,8 @@ body {
 
 .body__menu-toggle::after {
     z-index: 30;
-    position: relative;
-    top: -1.2em;
+    position: absolute;
+    top: 0;
     color: white;
     display: block;
     content: "\003D";
