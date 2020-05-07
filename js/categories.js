@@ -1,5 +1,3 @@
-let currentCategory = ""
-
 const createCategory = (name) => {
     let categories = document.getElementById("categories");
 
@@ -40,5 +38,3 @@ const clickCategory = () => {
         });
     })
 }
-
-setCategories();
