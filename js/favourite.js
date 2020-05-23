@@ -25,4 +25,3 @@ const addFavButton = () => {
         aside.classList.toggle('aside_show');
     });
 };
-
