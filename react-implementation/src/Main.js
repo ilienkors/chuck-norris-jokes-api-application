@@ -1,13 +1,15 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { Context } from './context'
 import CategoryButton from './CategoryButton'
+import Joke from './Joke'
 
 export default function Main() {
-    const { createJoke } = useContext(Context)
+    const { favorites, setFavorites, updateFavorites } = useContext(Context)
 
     const [choosenRadio, setChoosenRadio] = useState('random')
     const [categoriesState, setCategoriesState] = useState({})
     const [categoriesButtons, setCategoriesButtons] = useState([])
+    const [jokes, setJokes] = useState([])
 
     useEffect(() => {
         let tempButtons = []
@@ -32,7 +34,7 @@ export default function Main() {
     }, [])
 
     useEffect(() => {
-        clearJokes()
+        setJokes([])
         if (choosenRadio === 'random') {
             document.getElementById('categories').classList.add("categories_hide")
             document.getElementById('search-input').classList.add("search-section__search_hide")
@@ -55,12 +57,6 @@ export default function Main() {
         }
     }
 
-    const clearJokes = () => {
-        let mainJokes = document.getElementById("main-jokes");
-        while (mainJokes.firstChild)
-            mainJokes.removeChild(mainJokes.firstChild)
-    }
-
     let getJoke = (url) => {
         fetch(url)
             .then((response) => {
@@ -68,11 +64,15 @@ export default function Main() {
             })
             .then((resJoke) => {
                 if (resJoke.result) {
-                    resJoke.result.forEach(resJoke => {
-                        createJoke("main-jokes", resJoke);
+                    let tempJokes = []
+                    resJoke.result.forEach(singleJoke => {
+                        tempJokes.push(<Joke joke={singleJoke} key={singleJoke.id} />)
                     });
-                } else
-                    createJoke("main-jokes", resJoke);
+                    setJokes(tempJokes)
+                } else {
+                    setJokes([].concat(jokes, [<Joke joke={resJoke} key={resJoke.id} />]))
+                }
+
             });
     };
 
@@ -84,18 +84,18 @@ export default function Main() {
             getJoke('https://api.chucknorris.io/jokes/random?category=' + getCurrentCategory());
         };
         if (choosenRadio === 'search') {
-             let text = document.getElementById("search-input").value;
-             if (text.length < 3 || text.length > 120)
-                 alert("Size must be between 3 and 120")
-             else {
-                 getJoke('https://api.chucknorris.io/jokes/search?query=' + text);
-             }
-         };
+            let text = document.getElementById("search-input").value;
+            if (text.length < 3 || text.length > 120)
+                alert("Size must be between 3 and 120")
+            else {
+                getJoke('https://api.chucknorris.io/jokes/search?query=' + text);
+            }
+        };
     };
 
     return (
         <Context.Provider value={{
-            categoriesState, setCategoriesState
+            categoriesState, setCategoriesState, favorites, setFavorites, updateFavorites
         }}>
             <main className="main" id="main">
                 <h2 className="main__hey">Hey!</h2>
@@ -126,7 +126,7 @@ export default function Main() {
 
                 <button className="main__joke-button" id="joke-button" onClick={() => takeJokes()}>Get a joke</button>
 
-                <div className="jokes" id="main-jokes"></div>
+                <div className="jokes" id="main-jokes">{jokes}</div>
             </main>
         </Context.Provider>
     )
