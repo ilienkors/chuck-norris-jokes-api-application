@@ -84,6 +84,7 @@ function App() {
 
         let lastUpdate = document.createElement("p");
         lastUpdate.classList.add("jokes__last-update");
+        // eslint-disable-next-line
         lastUpdate.innerText = "Last update: " + Math.round(((new Date).getTime() - new Date(resJoke.updated_at).getTime()) / 3600000) + " hours ago";
 
         jokeContent.appendChild(jokeLink);

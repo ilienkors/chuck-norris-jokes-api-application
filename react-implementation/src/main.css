@@ -179,6 +179,10 @@ body {
 }
 
 .categories__category {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
     background: transparent;
     font-size: 0.6rem;
     letter-spacing: 0.1rem;
@@ -190,6 +194,10 @@ body {
     border: 0.1rem solid var(--element-color);
     border-radius: 0.3rem;
     padding: 0.3rem 0.75rem;
+}
+
+.categories__category:focus {
+    outline-style: none;
 }
 
 .categories__category_active {
