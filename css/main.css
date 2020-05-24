@@ -233,6 +233,10 @@ body {
 }
 
 .main__joke-button {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
     margin-top: 1rem;
     margin-bottom: 1rem;
     color: var(--white-color);
@@ -242,6 +246,10 @@ body {
     border: 0;
     border-radius: 0.5rem;
     background: var(--joke-button-background-color);
+}
+
+.main__joke-button:focus {
+    outline-style: none;
 }
 
 .jokes {

@@ -2,6 +2,8 @@
 
 **_You can see an example of working application following this [link](https://msi-2020-test-task.now.sh/ "working application link")_**
 
+**_React implementation is [here](https://react-msi-2020-test-task.now.sh/ "working react application link")_**
+
 ## Content
 
 - [Features](#feaures)
@@ -64,6 +66,7 @@ Output of unit tests:
 - - **[test.js](./js/test.js)** _(unit tests)_
 - ./icons/ _(icons)_
 - ./media/ _(files for documentation)_
+- [react-implementation](./react-implementation/)
 ---
 
 _Made by [Ilienko Roman](https://ilienkors.com/)_
