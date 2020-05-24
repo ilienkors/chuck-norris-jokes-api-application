@@ -83,14 +83,14 @@ export default function Main() {
         if (choosenRadio === 'from-categories') {
             getJoke('https://api.chucknorris.io/jokes/random?category=' + getCurrentCategory());
         };
-        /* if (document.getElementById('search').checked) {
+        if (choosenRadio === 'search') {
              let text = document.getElementById("search-input").value;
              if (text.length < 3 || text.length > 120)
                  alert("Size must be between 3 and 120")
              else {
-                 getJokes('https://api.chucknorris.io/jokes/search?query=' + text);
+                 getJoke('https://api.chucknorris.io/jokes/search?query=' + text);
              }
-         };*/
+         };
     };
 
     return (

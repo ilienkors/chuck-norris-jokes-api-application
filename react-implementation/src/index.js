@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import ReactDOM from 'react-dom'
 import { Context } from './context'
 import Header from './Header'
@@ -11,6 +11,9 @@ import unliked from "./unliked.svg"
 import message from "./message.svg"
 
 function App() {
+    useEffect(() => {
+        refreshFavorite()
+    }, [])
 
     const refreshFavorite = () => {
         let aside = document.getElementById("aside");
@@ -42,8 +45,7 @@ function App() {
         buttonLike.appendChild(heartIcon);
 
         buttonLike.addEventListener('click', () => {
-            let url = window.location.origin + "/icons/";
-            if (heartIcon.src === url + "unliked.svg") {
+            if (heartIcon.src === window.location.origin + unliked) {
                 if (document.getElementById("aside" + resJoke.id))
                     document.getElementById("aside" + resJoke.id).src = liked;
                 if (document.getElementById("main-jokes" + resJoke.id))
