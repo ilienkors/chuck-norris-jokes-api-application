@@ -1,4 +1,4 @@
-# Test task for Front-End Intern position
+# Chuck Norris Jokes Api Application
 
 **_You can see an example of working application following this [link](https://msi-2020-test-task.now.sh/ "working application link")_**
 
